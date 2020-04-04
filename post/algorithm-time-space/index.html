@@ -1,0 +1,268 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>算法的时间复杂度和空间复杂度 | Gridea</title>
+<link rel="shortcut icon" href="https://xiaguangyong.github.io//favicon.ico?v=1585970829157">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://xiaguangyong.github.io//styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="算法的时间复杂度和空间复杂度 | Gridea - Atom Feed" href="https://xiaguangyong.github.io//atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="衡量算法优劣，有两个维度：「时间」和「空间」
+
+时间维度：是指执行当前算法所消耗的时间，我们通常用「时间复杂度」来描述。
+空间维度：是指执行当前算法需要占用多少内存空间，我们通常用「空间复杂度」来描述。
+
+时间复杂度 T(n) = O(f(..." />
+    <meta name="keywords" content="算法" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://xiaguangyong.github.io/">
+  <img class="avatar" src="https://xiaguangyong.github.io//images/avatar.png?v=1585970829157" alt="">
+  </a>
+  <h1 class="site-title">
+    Gridea
+  </h1>
+  <p class="site-description">
+    每天进步一点
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/xiaGuangYong" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              算法的时间复杂度和空间复杂度
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-04-04
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+                <a href="https://xiaguangyong.github.io/tag/ZJS1fzFII/" class="post-tag">
+                  # 算法
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>衡量算法优劣，有两个维度：「时间」和「空间」</p>
+<ul>
+<li>时间维度：是指执行当前算法所消耗的时间，我们通常用「时间复杂度」来描述。</li>
+<li>空间维度：是指执行当前算法需要占用多少内存空间，我们通常用「空间复杂度」来描述。</li>
+</ul>
+<h2 id="时间复杂度-tn-ofn">时间复杂度 T(n) = O(f(n))</h2>
+<blockquote>
+<p><strong>用来度量算法的运行时间，记作: T(n) = O(f(n))。它表示随着 输入大小n 的增大，算法执行需要的时间的增长速度可以用 f(n) 来描述。</strong></p>
+</blockquote>
+<h3 id="几种常见的复杂度量级">几种常见的复杂度量级</h3>
+<ul>
+<li>
+<p><strong>常数阶O(1)</strong></p>
+<p>无论代码执行了多少行，只要是没有循环等复杂结构，那这个代码的时间复杂度就都是O(1)，如：</p>
+<pre><code class="language-text">int x = 1;
+</code></pre>
+</li>
+<li>
+<p><strong>线性阶O(n)</strong></p>
+<p>代码会执行n遍，因此它消耗的时间是随着n的变化而变化的，因此这类代码都可以用O(n)来表示它的时间复杂度。</p>
+<pre><code class="language-text">for(i=1; i&lt;=n; ++i){
+   int x = i;
+}
+</code></pre>
+</li>
+<li>
+<p><strong>平方阶O(n²)</strong></p>
+<p>嵌套了2层n循环，它的时间复杂度就是 O(n*n)，即 O(n²)</p>
+<pre><code class="language-text">for(int i=0;i&lt;n;i++){
+	for(int j=0;j&lt;n;j++){
+			int x = j;
+	}
+}
+</code></pre>
+</li>
+<li>
+<p><strong>对数阶O(logN)</strong></p>
+<p>当循环 log2^n 次以后，这个代码就结束了。因此这个代码的时间复杂度为：O(logN)</p>
+<pre><code class="language-text">int i = 1;
+while(i&lt;n){
+    i = i * 2;
+}
+</code></pre>
+</li>
+<li>
+<p><strong>线性对数阶O(nlogN)</strong></p>
+</li>
+<li>
+<p><strong>立方阶O(n³)</strong></p>
+</li>
+<li>
+<p><strong>K次方阶O(n^k)</strong></p>
+</li>
+<li>
+<p><strong>指数阶(2^n)</strong></p>
+</li>
+</ul>
+<h2 id="空间复杂度-sn-ofn">空间复杂度 S(n) = O(f(n))</h2>
+<blockquote>
+<p>通过计算算法所需的存储空间实现，算法的空间复杂度的计算公式记作：S(n)=O(f(n))，其中，n为问题的规模，f(n)为语句关于n所占存储空间的函数。</p>
+</blockquote>
+<p>空间复杂度比较常用的有：O(1)、O(n)、O(n²)，我们下面来看看：</p>
+<ul>
+<li><strong>空间复杂度 O(1)</strong></li>
+</ul>
+<p>如果算法执行所需要的临时空间不随着某个变量n的大小而变化，即此算法空间复杂度为一个常量，可表示为 O(1)<br>
+如：</p>
+<pre><code class="language-text">int i = 1;
+</code></pre>
+<p>代码中的 i 所分配的空间都不随着处理数据量变化，因此它的空间复杂度 S(n) = O(1)</p>
+<ul>
+<li><strong>空间复杂度 O(n)</strong></li>
+</ul>
+<pre><code class="language-text">int[] m = new int[n]
+for(i=1; i&lt;=n; ++i){
+   int x = i;
+}
+</code></pre>
+<p>这段代码中，第一行new了一个数组出来，这个数据占用的大小为n，这段代码虽然有循环，但没有再分配新的空间，因此，这段代码的空间复杂度主要看第一行即可，即 S(n) = O(n)</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6-tn-ofn">时间复杂度 T(n) = O(f(n))</a>
+<ul>
+<li><a href="#%E5%87%A0%E7%A7%8D%E5%B8%B8%E8%A7%81%E7%9A%84%E5%A4%8D%E6%9D%82%E5%BA%A6%E9%87%8F%E7%BA%A7">几种常见的复杂度量级</a></li>
+</ul>
+</li>
+<li><a href="#%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6-sn-ofn">空间复杂度 S(n) = O(f(n))</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://xiaguangyong.github.io/post/centos7-install-docker/">
+              <h3 class="post-title">
+                CentOS7安装Docker
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/xiaGuangYong" target="_blank"> Feinx</a>
+  <a class="rss" href="https://xiaguangyong.github.io//atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

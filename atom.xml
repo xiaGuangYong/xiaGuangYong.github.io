@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiaguangyong.github.io/</id>
     <title>Gridea</title>
-    <updated>2020-03-29T12:15:57.552Z</updated>
+    <updated>2020-04-04T03:27:14.697Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiaguangyong.github.io/"/>
     <link rel="self" href="https://xiaguangyong.github.io/atom.xml"/>
@@ -10,6 +10,93 @@
     <logo>https://xiaguangyong.github.io/images/avatar.png</logo>
     <icon>https://xiaguangyong.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[算法的时间复杂度和空间复杂度]]></title>
+        <id>https://xiaguangyong.github.io/post/algorithm-time-space/</id>
+        <link href="https://xiaguangyong.github.io/post/algorithm-time-space/">
+        </link>
+        <updated>2020-04-04T03:22:53.000Z</updated>
+        <content type="html"><![CDATA[<p>衡量算法优劣，有两个维度：「时间」和「空间」</p>
+<ul>
+<li>时间维度：是指执行当前算法所消耗的时间，我们通常用「时间复杂度」来描述。</li>
+<li>空间维度：是指执行当前算法需要占用多少内存空间，我们通常用「空间复杂度」来描述。</li>
+</ul>
+<h2 id="时间复杂度-tn-ofn">时间复杂度 T(n) = O(f(n))</h2>
+<blockquote>
+<p><strong>用来度量算法的运行时间，记作: T(n) = O(f(n))。它表示随着 输入大小n 的增大，算法执行需要的时间的增长速度可以用 f(n) 来描述。</strong></p>
+</blockquote>
+<h3 id="几种常见的复杂度量级">几种常见的复杂度量级</h3>
+<ul>
+<li>
+<p><strong>常数阶O(1)</strong></p>
+<p>无论代码执行了多少行，只要是没有循环等复杂结构，那这个代码的时间复杂度就都是O(1)，如：</p>
+<pre><code class="language-text">int x = 1;
+</code></pre>
+</li>
+<li>
+<p><strong>线性阶O(n)</strong></p>
+<p>代码会执行n遍，因此它消耗的时间是随着n的变化而变化的，因此这类代码都可以用O(n)来表示它的时间复杂度。</p>
+<pre><code class="language-text">for(i=1; i&lt;=n; ++i){
+   int x = i;
+}
+</code></pre>
+</li>
+<li>
+<p><strong>平方阶O(n²)</strong></p>
+<p>嵌套了2层n循环，它的时间复杂度就是 O(n*n)，即 O(n²)</p>
+<pre><code class="language-text">for(int i=0;i&lt;n;i++){
+	for(int j=0;j&lt;n;j++){
+			int x = j;
+	}
+}
+</code></pre>
+</li>
+<li>
+<p><strong>对数阶O(logN)</strong></p>
+<p>当循环 log2^n 次以后，这个代码就结束了。因此这个代码的时间复杂度为：O(logN)</p>
+<pre><code class="language-text">int i = 1;
+while(i&lt;n){
+    i = i * 2;
+}
+</code></pre>
+</li>
+<li>
+<p><strong>线性对数阶O(nlogN)</strong></p>
+</li>
+<li>
+<p><strong>立方阶O(n³)</strong></p>
+</li>
+<li>
+<p><strong>K次方阶O(n^k)</strong></p>
+</li>
+<li>
+<p><strong>指数阶(2^n)</strong></p>
+</li>
+</ul>
+<h2 id="空间复杂度-sn-ofn">空间复杂度 S(n) = O(f(n))</h2>
+<blockquote>
+<p>通过计算算法所需的存储空间实现，算法的空间复杂度的计算公式记作：S(n)=O(f(n))，其中，n为问题的规模，f(n)为语句关于n所占存储空间的函数。</p>
+</blockquote>
+<p>空间复杂度比较常用的有：O(1)、O(n)、O(n²)，我们下面来看看：</p>
+<ul>
+<li><strong>空间复杂度 O(1)</strong></li>
+</ul>
+<p>如果算法执行所需要的临时空间不随着某个变量n的大小而变化，即此算法空间复杂度为一个常量，可表示为 O(1)<br>
+如：</p>
+<pre><code class="language-text">int i = 1;
+</code></pre>
+<p>代码中的 i 所分配的空间都不随着处理数据量变化，因此它的空间复杂度 S(n) = O(1)</p>
+<ul>
+<li><strong>空间复杂度 O(n)</strong></li>
+</ul>
+<pre><code class="language-text">int[] m = new int[n]
+for(i=1; i&lt;=n; ++i){
+   int x = i;
+}
+</code></pre>
+<p>这段代码中，第一行new了一个数组出来，这个数据占用的大小为n，这段代码虽然有循环，但没有再分配新的空间，因此，这段代码的空间复杂度主要看第一行即可，即 S(n) = O(n)</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[CentOS7安装Docker]]></title>
         <id>https://xiaguangyong.github.io/post/centos7-install-docker/</id>
